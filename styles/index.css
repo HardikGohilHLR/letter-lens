@@ -1,0 +1,94 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-main: var(--font-main);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width <= --theme(--breakpoint-sm)) {
+    padding-inline: 1.25rem;
+  }
+  @media (width >= 1288px) {
+    max-width: 1288px;
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #14141c;
+
+  --primary: #14141c;
+
+  --secondary: #f4f4f5;
+  --dark-gray: #f4f4f5;
+
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #14141c;
+
+  --radius: 0.6rem;
+}
+
+.dark {
+  --background: #14141c;
+  --foreground: #fafafa;
+
+  --primary: #fafafa;
+
+  --secondary: #14141c;
+  --dark-gray: #1d1d2b;
+
+  --border: #1d1d2b;
+  --input: #14141c;
+  --ring: #d4d4d8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+
+  --color-secondary: var(--secondary);
+  --color-dark-gray: var(--dark-gray);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
