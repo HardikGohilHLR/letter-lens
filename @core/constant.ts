@@ -35,7 +35,7 @@ export const META_DATA: Metadata = {
     type: 'website',
     siteName: 'LetterLens',
     url: process.env.NEXT_PUBLIC_SITE_URL,
-    images: [{ url: `/images/letter-lens.jpg` }],
+    images: [{ url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/letter-lens.jpg` }],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_VERIFICATION_GOOGLE,
