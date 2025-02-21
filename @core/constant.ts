@@ -37,6 +37,13 @@ export const META_DATA: Metadata = {
     url: process.env.NEXT_PUBLIC_SITE_URL,
     images: [{ url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/letter-lens.jpg` }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LetterLens - Online Word & Character Counter',
+    description:
+      'Accurately count words, characters, sentences, and paragraphs with LetterLens. Get letter density insights, estimated reading time, and more',
+    images: [{ url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/letter-lens.jpg` }],
+  },
   verification: {
     google: process.env.NEXT_PUBLIC_VERIFICATION_GOOGLE,
   },
